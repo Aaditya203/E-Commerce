@@ -66,7 +66,7 @@ const Hero = () => {
     </div>
       
         {/* right part */}
-        <img src={model2} alt="" className='w-220 sm:w-1/2 object-scale-down bg-gray-400' />
+        <img src={model2} alt="" className='w-220 sm:w-1/2 object-scale-down ' />
       
     </div>
   )
