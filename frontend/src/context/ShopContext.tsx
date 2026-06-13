@@ -1,14 +1,20 @@
-import { createContext } from "react";
+import { createContext, useContext } from "react";
 import { products } from "../assets/asset";
+import type { ShopContextType } from "../types";
 
-
-type ShopContextType = {
-    products: typeof products;
-    currency: string;
-    delivery_fee: number;
-};
 export const ShopContext = createContext<ShopContextType | null>(null);
 
+export const useShopContext = () => {
+  const context = useContext(ShopContext);
+
+  if (!context) {
+    throw new Error(
+      "useShopContext must be used within ShopContextProvider"
+    );
+  }
+
+  return context;
+};
 
 const ShopContextProvider = (props:any)=>{
     const currency:string = '₹';
